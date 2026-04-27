@@ -6,7 +6,7 @@
     <title>CAR Detailing Guide | One Page</title>
     <meta
       name="description"
-      content="Prakticka one-page landing pre car detailing guide s tutorialmi a moznostou stiahnutia."
+      content="Prakticka one-page landing pre car detailing guide s tutorialmi a rychlym prechodom na online verziu."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -179,28 +179,6 @@
         background: linear-gradient(130deg, rgba(29, 123, 116, 0.1), rgba(222, 122, 45, 0.13));
       }
 
-      .download-form {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 10px;
-        margin-top: 14px;
-      }
-
-      .download-form input {
-        width: 100%;
-        border: 1px solid #b7c6c6;
-        border-radius: 12px;
-        padding: 12px 14px;
-        font: inherit;
-      }
-
-      .download-note {
-        margin-top: 10px;
-        color: var(--teal-dark);
-        font-weight: 700;
-        min-height: 1.2em;
-      }
-
       .muted {
         color: var(--muted);
         font-size: 0.95rem;
@@ -228,9 +206,6 @@
           grid-template-columns: 1fr;
         }
 
-        .download-form {
-          grid-template-columns: 1fr;
-        }
       }
     </style>
   </head>
@@ -244,7 +219,7 @@
           Najdes tu jasny postup, odporucane produkty a tutorialy od prveho oplachu az po finalny finish.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#download">Stiahnut guide</a>
+          <a class="btn btn-primary" href="#download">Otvorit online guide</a>
           <a class="btn btn-secondary" href="#tutorialy">Pozriet sekcie</a>
         </div>
       </div>
@@ -300,47 +275,24 @@
       </section>
 
       <section id="download" class="download card">
-        <h2 class="section-title">Stiahni si web verziu guide</h2>
+        <h2 class="section-title">Otvor si online verziu guide</h2>
         <p class="muted">
-          Zadaj email a klikni na stiahnutie. Dostanes ZIP balicek so strankou z priecinka car_detailing/dist.
+          Stahovanie suborov je zrusene. Pokracuj priamo na live stranku s obsahom guide.
         </p>
-        <form id="downloadForm" class="download-form">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            autocomplete="email"
-            placeholder="tvoj@email.com"
-            required
-          />
-          <button class="btn btn-primary" type="submit">Stiahnut ZIP</button>
-        </form>
-        <div id="downloadNote" class="download-note" aria-live="polite"></div>
-        <a id="downloadLink" href="downloads/car-detailing-web.zip" download hidden>download</a>
+        <div class="cta-row">
+          <a
+            class="btn btn-primary"
+            href="https://car-detailing-gamma.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Prejst na car-detailing-gamma.vercel.app</a
+          >
+        </div>
       </section>
     </main>
 
     <footer class="container">
       CAR Detailing Guide | Prakticky navod na ciste a chranene auto
     </footer>
-
-    <script>
-      const form = document.getElementById("downloadForm");
-      const note = document.getElementById("downloadNote");
-      const link = document.getElementById("downloadLink");
-
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const email = document.getElementById("email").value.trim();
-
-        if (!email || !email.includes("@")) {
-          note.textContent = "Zadaj prosim validny email.";
-          return;
-        }
-
-        note.textContent = "Super, stahovanie sa spusta...";
-        link.click();
-      });
-    </script>
   </body>
 </html>
